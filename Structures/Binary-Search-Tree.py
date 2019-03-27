@@ -1,4 +1,4 @@
-#Binary Tree example
+#Binary BinarySearch Tree example
 class Node(object):
     """docstring for Node."""
     def __init__(self, data):
@@ -9,14 +9,26 @@ class Node(object):
     def insert(self, data):
         # Compare the new value with the parent node
         if self.data:
-            if self.left is None:
-                self.left = Node(data)
-            elif self.right is None:
+            if data < self.data:
+                if self.left is None:
+                    self.left = Node(data)
+                else:
+                    self.left.insert(data)
+            elif data > self.data:
+                if self.right is None:
                     self.right = Node(data)
-            else:
-                self.left.insert(data)
+                else:
+                    self.right.insert(data)
         else:
             self.data = data
+    def CountNode(self):
+        i=0
+        if self.left:
+            i = i + self.left.CountNode()
+        i = i+1
+        if self.right:
+            i = i + self.right.CountNode()
+        return i
 
     def PrintTree(self):
         if self.left:
@@ -27,8 +39,7 @@ class Node(object):
 
 root = Node(10)
 root.insert(9)
-root.insert(1)
-root.insert(4)
 root.insert(13)
-root.insert(15)
+
 root.PrintTree()
+print(root.CountNode())
