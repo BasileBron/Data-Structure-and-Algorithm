@@ -2,9 +2,10 @@
 class Node(object):
     """docstring for Node."""
     def __init__(self, data):
-        self.left = None
-        self.data = data
-        self.right = None
+        if data:
+            self.left = None
+            self.data = data
+            self.right = None
 
     def insert(self, data):
         # Compare the new value with the parent node
@@ -21,14 +22,23 @@ class Node(object):
                     self.right.insert(data)
         else:
             self.data = data
-    def CountNode(self):
-        i=0
+    def count_node(self):
+        n = 0
         if self.left:
-            i = i + self.left.CountNode()
-        i = i+1
+            n = n + self.left.count_node()
+        n = n+1
         if self.right:
-            i = i + self.right.CountNode()
-        return i
+            n = n + self.right.count_node()
+        return n
+
+    def count_height(self):
+        n = 0
+        if self.left:
+            n = n + self.left.count_node()
+        n = n+1
+        if self.right:
+            n = n + self.right.count_node()
+        return n
 
     def PrintTree(self):
         if self.left:
@@ -37,9 +47,12 @@ class Node(object):
         if self.right:
             self.right.PrintTree()
 
+
+
 root = Node(10)
 root.insert(9)
 root.insert(13)
-
 root.PrintTree()
-print(root.CountNode())
+print(root.count_node())
+
+def array_to_binary_search_tree():
