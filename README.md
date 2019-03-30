@@ -50,10 +50,10 @@ mutator | replaceFirst(x,l) replaceRest(r,l)
 
 |Linear Search | Binary Search|
 |--------------|--------------|
-|![alt text](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/Linear-Search.png?raw=true)| ![alt text](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary-search.jpg?raw=true)|
+|![Linear serach](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/Linear-Search.png?raw=true)| ![Binary search](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary-search.jpg?raw=true)|
 |O(n)   | O(log n)
 
-![alt text](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity.jpeg?raw=true)
+![Complexity graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity.jpeg?raw=true)
 __________________________________________________________________________________
 ## Tree
 
@@ -64,7 +64,7 @@ ________________________________________________________________________________
 
 ### Different kind of tree
 
-![alt text](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/tree-kind.png?raw=true)
+![Different kind of tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/tree-kind.png?raw=true)
 
 ### Balancing
 
@@ -96,6 +96,7 @@ _If we want to store a shopping list of less than a 11 word then we just have to
 
 The load facto is defined by the percentage of filled slot in your table. A good load factor is generally around 50% the more it increase the more time it will take to manipulate the table.
 
+### Conflict management
 __________________________________________________________________________________
 ## Graph
 
@@ -115,6 +116,29 @@ Graph are often useful to represent informations in a more general graphical for
 
 ### Array implementation of a graph
 
-![alt text](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/undirectedgraph.png?raw=true)
+![undirected graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/undirectedgraph.png?raw=true)
 
-![alt text](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/adjacencymatrix.png?raw=true)
+![matrix adjacency](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/adjacencymatrix.png?raw=true)
+
+This is really explicit, however we can easily notice the problematic of this implementation, which is the amount of cell required. we would need an array with 10000 cell for a graph with only 100 vertices.
+
+Also a graph with only a few edge would mainly filled the array with zeros...
+
+cons :
+- Take a lot of space.
+- Take space even when there is no edges.
+- Symmetrical (Two time the same data).
+
+
+### Mixed implementation
+
+To solved the problematic above we can use a one-dimensional array that points to a linked list of neighbours for each vertex name, connection weight and pointer to the next triple.
+
+![Graph Mixed implementation](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/mixed.png?raw=true)
+
+cons :
+- Symmetrical (Two time the same data).
+
+### Pointer-based implementation
+
+![ Graph pointer-based implementation](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/pointerBased.png?raw=true)
