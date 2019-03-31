@@ -34,7 +34,11 @@ I regard the invariant as the **condition of the loop**.
 A loop invariant is a property that is true before and after each iteration.
 
 __________________________________________________________________________________
-## Lists, Recursion, Stacks, Queues
+## Lists, Stacks, Queues
+
+| Stacks             | Queues            |
+|:------------------ |:----------------- |
+| First In First Out | First In Last Out |
 
 ### Abstract Data Type
 
@@ -68,7 +72,7 @@ ________________________________________________________________________________
 
 ### Balancing
 
-coming soon
+![Balancing](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/balanced1.JPG?raw=true)
 
 ## Priority Queues and Heap Trees
 ### Sorting
@@ -104,20 +108,19 @@ Graph are often useful to represent informations in a more general graphical for
 
 | Vocabulary                | description                                                                                                            |
 |:------------------------- |:---------------------------------------------------------------------------------------------------------------------- |
-| Nodes / Vertices / Points | Header Two                                                                                                             |
-| Edges / Lines / Links     | links between the nodes                                                                                                |
+| Nodes / Vertices / Points | Equivalent of tree nodes                                                                                 |
+| Edges / Lines / Links     | Links between the nodes                                                                                                |
 | Directed Graph            | Edges have a direction and can be in both way like roads                                                               |
-| Undirected Graph          | in Undirected graph we assume that the edge is going in both directions                                                |
-| Simple graph              | no self loop (edge connected at  both ends the same vertex)and no more than one edge connecting every pair of vertices |
-| Arcs                      | lines on a directed graph                                                                                              |
-| Weighted graph            | mean that the edges have labels (usually real number)                                                                  |
+| Undirected Graph          | In Undirected graph we assume that the edge is going in both directions                                                |
+| Simple graph              | No self loop (edge connected at  both ends the same vertex)and no more than one edge connecting every pair of vertices |
+| Arcs                      | Lines on a directed graph                                                                                              |
+| Weighted graph            | Mean that the edges have labels (usually real number)                                                                  |
 | weakly connected graph    | Each pair of vertices are connected in both ways                                                                       |
-| Weakly connected graph    | at least one pair of vertices aren't connected or connected only in one way                                            |
+| Weakly connected graph    | At least one pair of vertices aren't connected or connected only in one way                                            |
 
-### Array implementation of a graph
+### Array implementation
 
 ![undirected graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/undirectedgraph.png?raw=true)
-
 ![matrix adjacency](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/adjacencymatrix.png?raw=true)
 
 This is really explicit, however we can easily notice the problematic of this implementation, which is the amount of cell required. we would need an array with 10000 cell for a graph with only 100 vertices.
@@ -128,7 +131,6 @@ cons :
 - Take a lot of space.
 - Take space even when there is no edges.
 - Symmetrical (Two time the same data).
-
 
 ### Mixed implementation
 
@@ -142,3 +144,7 @@ cons :
 ### Pointer-based implementation
 
 ![ Graph pointer-based implementation](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/pointerBased.png?raw=true)
+
+### Dijkstra's Algorithm
+
+"Dijkstra's algorithm will keep an array **D** of distances indexed by the vertices. **D[z]** will hold the distance of the shortest path from **s to z** on the planarity."
