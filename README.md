@@ -148,3 +148,96 @@ cons :
 ### Dijkstra's Algorithm
 
 "Dijkstra's algorithm will keep an array **D** of distances indexed by the vertices. **D[z]** will hold the distance of the shortest path from **s to z** on the planarity."
+
+# Test Question
+
+* A is queue is a linear data
+structure with certain
+restriction on insertion and
+deletion operations.
+
+	*	What operation caracterise the queue ADT? Your answer should name them and explain what they do.
+
+		<details>
+		  <summary>Answer</summary>
+
+			Queues ADT are a collection of data with a "First In First Out" data structure.
+			The first item added to the queue will be the first to go out of it(e.g a one-line road is a queue)			
+		</details>
+
+	*	Sketch an array-based implementation of a queue data structure. Your answer should explain how the array is used to store the data items in the queue in order to.
+		* Ensure best use of the available, fixed storage capacity.
+		* Allow the storage capacity to be expanded when the number of items in the queue exceeds the array size.
+
+		<details>
+		  <summary>Answer</summary>
+		  ![array based implementation](link)
+
+		</details>
+	* What are the advantages and disadvantages of implementing a queue using a linked list rather than an array?
+		<details>
+			<summary>Answer</summary>
+
+			Advantages :
+			- It is not finite, there is no need to add new slot or define the size.
+			- To add a new item you just have to link it to the last item on the list.
+
+			Disadvantages :
+			- Accessing item in the middle of the list or at the end is not as trivial as it is with array.				
+		</details>
+* A binary heap tree is a data structure used to maintain order-sorted data.
+	* Give a definition of a binary heap tree data structure, explaining any terms that you introduce.
+
+	<details>
+	<summary>Answer</summary>
+
+	A binary heap tree is a tree that order its data based on there priority (i.e priority queue). They are stored in decreasing order. From the biggest value at the root to the lowest values at leafs.
+	</details>
+
+	* Give a scheme for efficiently representing a binary heap tree using a single array.
+
+
+	<details>
+	<summary>Answer</summary>
+
+	| 1   | 2   | 3   | 4   | 5   |
+	|:--- |:--- | --- | --- | --- |
+	| A   | B   | C   | D   | E   |
+
+	To make the tree based on an array you need to
+
+	</details>
+
+	* In the context of inserting a new data item into a binary heap, describe clearly what is meant by up heap bubbling and explain why it is necessary.
+
+	<details>
+	<summary>Answer</summary>
+
+	We usually use up heap bubbling when we create the tree or insert a new element. for example when we insert a value **v** in the tree, we have to make sure that this value is were it is supposed to be i.e if **v** is actually inferior to his parent node and if it is not the case then they switch place. We have to do this until the we find a parent node greater than **v** or if **v** become the root node.
+
+	Up heap bubbling is crucial because it allow us to keep the tree in decreasing order which is the point of this data structure if we want to keep its efficiency.
+
+	</details>
+
+	* The time taken to insert a new node into a binary heap with **n** nodes is **O(log n)**. Explain why this is so.
+
+	<details>
+	<summary>Answer</summary>
+
+	First of all let's precise that **O** is, Omega is the worst case scenario of the given algorithm. The worst case scenario of the insertion algorithm is actually not in the insertion itself but in the bubbling up algorithm that we need to run after each insertion. The insertion itself is of complexity 0(1). The worst case scenario of the bubbling up algorithm occur when every node value of the tree are inferior to the one inserted, because we need to compare the inserted value with each parent node that he have until he finally switch with the root node. base on this assumption we can conclude that the complexity O of the full insertion process in O(n).
+
+	</details>
+
+	* Give pseudo code for an algorithm that uses a binary heap to sort a sequence S of data items. You can assume that the operations insert(e), wich insert an item **e** into the binary heap and removeMin(), wich removes and return the smallest element of the binary heap, are already defined.
+
+	<details>
+	<summary>Answer</summary>
+
+	```
+	for each s in S
+		insert(data s in heap h)
+	for (i = 0, i <= S lenght,i++ )
+		S[s] = removeMin(heap h)
+	```
+
+	</details>
