@@ -1,4 +1,5 @@
 # Data-Structure-and-Algorithm
+/!\ Not finished yet, please report any mistakes /!\
 
 This repository was made during the reading of the [lecture notes](http://www.cs.bham.ac.uk/~jxb/DSA/dsa.pdf) revised each year by **Jhon Bullinara** and originally written by **Martin Escardo** and revised by **Manfred Kerber**. All are members of the School of Computer Science, University of Birmingham, UK.
 
@@ -164,7 +165,7 @@ deletion operations.
 			Queues ADT are a collection of data with a "First In First Out" data structure.
 			The first item added to the queue will be the first to go out of it(e.g a one-line road is a queue)			
 		</details>
-
+		__________________________________________________________________
 	*	Sketch an array-based implementation of a queue data structure. Your answer should explain how the array is used to store the data items in the queue in order to.
 		* Ensure best use of the available, fixed storage capacity.
 		* Allow the storage capacity to be expanded when the number of items in the queue exceeds the array size.
@@ -174,6 +175,8 @@ deletion operations.
 		  ![array based implementation](link)
 
 		</details>
+		__________________________________________________________________
+
 	* What are the advantages and disadvantages of implementing a queue using a linked list rather than an array?
 		<details>
 			<summary>Answer</summary>
@@ -185,6 +188,8 @@ deletion operations.
 			Disadvantages :
 			- Accessing item in the middle of the list or at the end is not as trivial as it is with array.				
 		</details>
+		__________________________________________________________________
+
 * A binary heap tree is a data structure used to maintain order-sorted data.
 	* Give a definition of a binary heap tree data structure, explaining any terms that you introduce.
 
@@ -193,6 +198,8 @@ deletion operations.
 
 	A binary heap tree is a tree that order its data based on there priority (i.e priority queue). They are stored in decreasing order. From the biggest value at the root to the lowest values at leafs.
 	</details>
+	__________________________________________________________________
+
 
 	* Give a scheme for efficiently representing a binary heap tree using a single array.
 
@@ -207,6 +214,8 @@ deletion operations.
 	To make the tree based on an array you need to
 
 	</details>
+	__________________________________________________________________
+
 
 	* In the context of inserting a new data item into a binary heap, describe clearly what is meant by up heap bubbling and explain why it is necessary.
 
@@ -218,6 +227,7 @@ deletion operations.
 	Up heap bubbling is crucial because it allow us to keep the tree in decreasing order which is the point of this data structure if we want to keep its efficiency.
 
 	</details>
+	__________________________________________________________________
 
 	* The time taken to insert a new node into a binary heap with **n** nodes is **O(log n)**. Explain why this is so.
 
@@ -227,6 +237,8 @@ deletion operations.
 	First of all let's precise that **O** is, Omega is the worst case scenario of the given algorithm. The worst case scenario of the insertion algorithm is actually not in the insertion itself but in the bubbling up algorithm that we need to run after each insertion. The insertion itself is of complexity 0(1). The worst case scenario of the bubbling up algorithm occur when every node value of the tree are inferior to the one inserted, because we need to compare the inserted value with each parent node that he have until he finally switch with the root node. base on this assumption we can conclude that the complexity O of the full insertion process in O(n).
 
 	</details>
+	__________________________________________________________________
+
 
 	* Give pseudo code for an algorithm that uses a binary heap to sort a sequence S of data items. You can assume that the operations insert(e), wich insert an item **e** into the binary heap and removeMin(), wich removes and return the smallest element of the binary heap, are already defined.
 
@@ -241,3 +253,73 @@ deletion operations.
 	```
 
 	</details>
+	__________________________________________________________________
+
+* Consider the following arithmetic expression:
+
+   ``` (3+(x*2)/(5-x)) ```
+
+	 * Draw a binary expression tree to represent this expression.
+
+	 <details>
+	 <summary>Answer</summary>
+
+	 ![binary tree expression](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_tree_expression.png?raw=true)
+	 </details>
+	 __________________________________________________________________
+
+	 * Consider a post-order traversal of the tree above, which print the data stored at each node, in turn as, as it is visited. Write down the expression that would result.
+
+	 <details>
+	 <summary>Answer</summary>
+
+	 first of all lets define the different orders:
+
+	 - in-order : left, parent, right
+	 - pre-order : parent, left, right
+	 - post-order : left, right, parent
+
+	 visual exemple ![here](https://www.youtube.com/watch?v=4zVdfkpcT6U)
+
+	 wich give us : ``` 3+x2*+5x-/ ```
+	 </details>
+	 __________________________________________________________________
+
+	 * Provide pseudo-code for a recursive algorithm that evaluates an arbitrary arithmetic expression represented by a binary expression tree.
+
+	 <details>
+	 <summary>Answer</summary>
+
+	 such function will be based on the "in-order" tree traversal method.
+
+
+	 ```
+	 def in_order_traversal(root):
+			if left_child(root):
+					 result =+ in_order_traversal(left_child(root))
+			result =+ root
+			if right_child(root):
+					 result =+ in_order_traversal(right_child(root))
+			return result
+	 ```
+	 </details>
+	 __________________________________________________________________
+
+	 * You have been hired to write a 'phonebook' application for a small company. The phonebook stores name of the company employees and their associated phone-numbers. Given an employee names it should be possible to retrieve the employee's phone number. It should also be possible to add a name and associated number when a new employee joins the company; and to delete a name and number when the named employee leaves the company.
+
+	  	* Explain how you might implement the phonebook application using a **doubly-linked list**, paying attention to the operation for getting the phone number for a given name and adding and deleting employee phone numbers.
+
+			<details>
+	 	 	<summary>Answer</summary>
+			I would store the values in each cell in this format: "name, number"
+				to search for an employee number based on his name we just have to go go throughout the list and compare the **n** first letters of each cell (**n** being the lengt of the name) with the given name. if a match occur return the full cell that matched.
+
+			To insert a new employee in the doubly link list based on the given values (name, number and list), first this function check if the given list is not empty (otherwise we just return a new list with the given value). If not then   
+
+				* One that delete the cell of the given name
+
+
+	 	 	</details>
+		 __________________________________________________________________
+
+			* Suppose the company becomes very successful and grows to the point where it has many thousands of employees. Is the implementation based on a doubly link list adequate? Give reasons for your answer.
