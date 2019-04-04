@@ -1,40 +1,23 @@
 # Data-Structure-and-Algorithm
-/!\ Not finished yet, please report any mistakes /!\
+/!\ Not finished yet, please report any mistakes or strange sentences formulation /!\
+
 
 This repository was made during the reading of the [lecture notes](http://www.cs.bham.ac.uk/~jxb/DSA/dsa.pdf) revised each year by **Jhon Bullinara** and originally written by **Martin Escardo** and revised by **Manfred Kerber**. All are members of the School of Computer Science, University of Birmingham, UK.
 
 The lecture notes are 120 page long, this is a condensed version for the peoples that need a quick approach of the field or people that are already familiar and need quick reminder.
 
-## Fundamental question about algorithms
+One of the greatest on-line resource on this subject is this youtube ![playlist](https://www.youtube.com/watch?v=IgeJmTKQlKs&list=PLpPXw4zFa0uKKhaSz87IowJnOTzh9tiBk&index=2)
 
-- What is it supposed to do ?
+## Complexity
 
-- Does it really do what it is supposed to do ?
+When we talk about complexity in computer there is some things that you have to keep in mind:
 
-- How efficiently does it do it ?
-
-## Loop and Structure of iteration
-
-```
-for( INITIALISATION ; CONDITION ; UPDATE ) {
-	REPEATED PROCESS
-}
-```
-Exemple :
-
-```
-for( i = 0, sum = 0 ; i < 20 ; i++ ) {
-	sum += a[ i ];
-}
-```
-### Invariant
-The invariant don’t change. it **is true as long as the iterations goes on**, because it is the reason it goes on.
-
-I regard the invariant as the **condition of the loop**.
-
-A loop invariant is a property that is true before and after each iteration.
-
-__________________________________________________________________________________
+* We only care about input greater than
+* all constant/fixed values are dropped
+(i.g 7 and 5 are constant in 4x-7 = 5)
+* ignore the base of logs
+![Complexity graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity.jpeg?raw=true)
+____________________________________________________________________________
 ## Lists, Stacks, Queues
 
 | Stacks             | Queues            |
@@ -58,7 +41,6 @@ mutator | replaceFirst(x,l) replaceRest(r,l)
 |![Linear serach](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/Linear-Search.png?raw=true)| ![Binary search](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary-search.jpg?raw=true)|
 |O(n)   | O(log n)
 
-![Complexity graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity.jpeg?raw=true)
 __________________________________________________________________________________
 ## Tree
 
@@ -75,12 +57,15 @@ ________________________________________________________________________________
 
 ![Balancing](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/balanced1.JPG?raw=true)
 
+### AVL tree
+
+An AVL tree is a binary tree search where the subtraction of (the left longest path - longest right path is strictly <= 1)
+
 ## Priority Queues and Heap Trees
 ### Sorting
 | comparison based                                                                      | Non-comparison based    |
 | ------------------------------------------------------------------------------------- | ----------------------- |
 | Bubble sort, Selection Sort, Insertion sort, Treesort, Heapsort, Quicksort, Mergesort | Bin, Bucket, Radix Sort |
-|                                                                                       |                         |
 __________________________________________________________________________________
 ## Hash table
 
@@ -150,6 +135,77 @@ cons :
 
 "Dijkstra's algorithm will keep an array **D** of distances indexed by the vertices. **D[z]** will hold the distance of the shortest path from **s to z** on the planarity."
 
+# Quick Recap
+
+* Arrays -----------------------------------------------------------------------------
+	* Pros:
+		1. Access to an array element is fast since we can compute its location quickly.
+
+	* Cons:
+		1. If we want to insert or delete an element, we have to shift subsequent elements which slows our computation down.
+		2. We need a large enough block of memory to hold our array.
+		3. Easily corrupted (One can easily inset data in middle)
+
+
+* Linked Lists ------------------------------------------------------------------------
+	* Pros:
+		1. Inserting and deleting data does not require us to move/shift subsequent data elements.
+
+	* Cons:
+		1. If we want to access a specific element, we need to traverse the list from the head of the list to find it which can take longer than an array access.
+		2. Linked lists require more memory.
+		3. Easily corrupted (One can easily inset data in middle)
+
+* Stack--------------------------------------------------------------------------------
+	* Pros:
+		1. Helps manage the data in particular way (LIFO) which is not possible with Linked list and array.
+		2. When function is called the local varriables are stored in stack and destroyed once returned. Stack is used when varriable is not used outside the function.
+		So, it gives control over how memory is allocated and deallocated
+		3. Stack frees you from the burden of remembering to cleanup(read delete) the object
+		4. Not easily corrupted (No one can easily inset data in middle)
+
+	* Cons:
+		1. Stack memory is limited.
+		2. Creating too many objects on the stack will increase the chances of stack overflow
+		3. Random access not possible
+
+* Queue ---------------------------------------------------------------------------------
+	* Pros:
+		1. Helps manage the data in particular way (FIFO). which is not possible with Linked list and array.
+		2. Not easily corrupted (No one can easily inset data in middle)
+
+	* Cons:
+		1. Random access not possible
+
+* Tree ---------------------------------------------------------------------------------
+	* Pros:
+		1. Searching is faster (with some ordering e.g., BST). we can search for a given key in moderate time (quicker than Linked List and slower than arrays).
+		2. Insert/delete keys in moderate time (quicker than Arrays and slower than Unordered Linked Lists).
+
+	* Cons:
+		1. High overhead
+		2. Large waste of unused links
+		3. Predetermined limit on number of a node’s children
+
+* Heap ---------------------------------------------------------------------------------
+	* Pros:
+		1. When the data in the variable is needed beyond the lifetime of the current function.
+		2. It can offer the maximum memory an OS can provide
+
+	* Cons:
+		1. You must make sure to free the memory when you are done
+
+* Graph ---------------------------------------------------------------------------------
+	* Pros:
+		1. Finding the path in efficient way
+
+	* Cons:
+		1. High overhead
+		2. Large waste of unused links
+
+![source](http://www.mylearning.in/2015/06/pros-and-cons-of-different-data.html)
+
+![complexity of data structures](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity_of_data_structures.png?raw=true)
 # Test Question
 
 * A is queue is a linear data
@@ -311,15 +367,47 @@ deletion operations.
 
 			<details>
 	 	 	<summary>Answer</summary>
+
+			the answer below was my first answer, but i did an "interesting" mistake by misreading the question. I assumed that I needed to explain a way to implement the function in an alphabetical order. But there is absolutely no interest to do such thing in a doubly linked list, because to allow the list to be sorted the insertion and deletion function ends up being of complexity O(n) instead of O(1).
+			It could be debatable whether or not it actually help the search function to be quicker, because assuming such conclusion means that a alphabetical order would be better than a random order to search a name. Which is not obvious at first sight and really depend of what kind of data is often search. long story short : **don't do that**.
+
+			old answer :
 			I would store the values in each cell in this format: "name, number"
-				to search for an employee number based on his name we just have to go go throughout the list and compare the **n** first letters of each cell (**n** being the lengt of the name) with the given name. if a match occur return the full cell that matched.
+				to search for an employee number based on his name we just have to go go throughout the list and compare the **n** first letters of each cell (**n** being the lenght of the name) with the given name. if a match occur return the full cell that matched.
 
-			To insert a new employee in the doubly link list based on the given values (name, number and list), first this function check if the given list is not empty (otherwise we just return a new list with the given value). If not then   
+			To insert a new employee in the doubly link list based on the given values (name, number and list), first this function check if the given list is not empty (otherwise we just return a new list with the given value). If not then use the alphabetical order to compare the cells with the given name to find the right spot to insert the new value.
 
-				* One that delete the cell of the given name
+			It is important to add that technically we don't insert the new item but create a new list which have the new item at the right place, because double linked list don't have mutator
 
+			Deleting a cell based on a given name is possible by comparing the cells with the name in the same way as the search function but instead of returning the cell we return the new list constructed during each comparison and that ignore the cell that we wanned to delete.
 
 	 	 	</details>
-		 __________________________________________________________________
+		 	__________________________________________________________________
 
 			* Suppose the company becomes very successful and grows to the point where it has many thousands of employees. Is the implementation based on a doubly link list adequate? Give reasons for your answer.
+
+			<details>
+	 	 	<summary>Answer</summary>
+
+			The complexity for **Insertion, Deletion, Search** is **O(n)** because we have to go troughs all the cells to execute each function.
+			although this data structure is **easy to maintain and implement**, this is not efficient in terms of computation if we have a big amount of data to manage.
+			</details>
+		* Binary tree data structures find wide application in computing. Explain what is meant by the following terms, illustrating your answers using suitable diagrams.
+			* A full binary tree
+			<details>
+	 	 	<summary>Answer</summary>
+
+			![binary tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_tree.PNG?raw=true)
+			</details>
+			* A binary search tree
+			<summary>Answer</summary>
+
+			![binary search tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_search_tree.PNG?raw=true)
+			</details>
+
+			* An AVL tree
+			<summary>Answer</summary>
+
+			![AVL tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/AVL_tree.PNG?raw=true)
+			</details>
+			Binary data structure allowed us to do a binary search O(log n)
