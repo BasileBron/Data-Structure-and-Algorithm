@@ -6,7 +6,7 @@ This repository was made during the reading of the [lecture notes](http://www.cs
 
 The lecture notes are 120 page long, this is a condensed version for the peoples that need a quick approach of the field or people that are already familiar and need quick reminder.
 
-One of the greatest on-line resource on this subject is this youtube ![playlist](https://www.youtube.com/watch?v=IgeJmTKQlKs&list=PLpPXw4zFa0uKKhaSz87IowJnOTzh9tiBk&index=2)
+One of the greatest on-line resource on this subject is this youtube [playlist](https://www.youtube.com/watch?v=IgeJmTKQlKs&list=PLpPXw4zFa0uKKhaSz87IowJnOTzh9tiBk&index=2)
 
 ## Complexity
 
@@ -203,7 +203,7 @@ cons :
 		1. High overhead
 		2. Large waste of unused links
 
-![source](http://www.mylearning.in/2015/06/pros-and-cons-of-different-data.html)
+[source](http://www.mylearning.in/2015/06/pros-and-cons-of-different-data.html)
 
 ![complexity of data structures](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity_of_data_structures.png?raw=true)
 # Test Question
@@ -213,7 +213,7 @@ structure with certain
 restriction on insertion and
 deletion operations.
 
-	*	What operation caracterise the queue ADT? Your answer should name them and explain what they do.
+	*	What operation characterize the queue ADT? Your answer should name them and explain what they do.
 
 		<details>
 		  <summary>Answer</summary>
@@ -262,12 +262,15 @@ deletion operations.
 
 	<details>
 	<summary>Answer</summary>
+  ![complexity of data structures](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/scheme.png?raw=true)
+  Would be:
+  | 1   | 2   | 3   | 4   | 5   | 6   | 7   |
+  |:--- |:--- | --- | --- | --- | --- | --- |
+  | A   | B   | C   | D   | E   | F   | G   |
 
-	| 1   | 2   | 3   | 4   | 5   |
-	|:--- |:--- | --- | --- | --- |
-	| A   | B   | C   | D   | E   |
-
-	To make the tree based on an array you need to
+	To defined the child of each node we use the index value. For example the index of the left child of the node index **ni** will be `ni*2` and `ni*2+1` for the right child index.
+  C left child will be F because: 3*2 = 6
+  its right child will be G because: 3*2+1 = 7
 
 	</details>
 	__________________________________________________________________
@@ -313,7 +316,7 @@ deletion operations.
 
 * Consider the following arithmetic expression:
 
-   ``` (3+(x*2)/(5-x)) ```
+   `(3+(x*2)/(5-x))`
 
 	 * Draw a binary expression tree to represent this expression.
 
@@ -337,7 +340,7 @@ deletion operations.
 
 	 visual exemple ![here](https://www.youtube.com/watch?v=4zVdfkpcT6U)
 
-	 wich give us : ``` 3+x2*+5x-/ ```
+	 wich give us : `3+x2*+5x-/`
 	 </details>
 	 __________________________________________________________________
 
@@ -349,15 +352,14 @@ deletion operations.
 	 such function will be based on the "in-order" tree traversal method.
 
 
-	 ```
-	 def in_order_traversal(root):
-			if left_child(root):
-					 result =+ in_order_traversal(left_child(root))
-			result =+ root
-			if right_child(root):
-					 result =+ in_order_traversal(right_child(root))
-			return result
-	 ```
+	 `def in_order_traversal(root):
+		if left_child(root):
+				 result =+ in_order_traversal(left_child(root))
+		result =+ root
+		if right_child(root):
+				 result =+ in_order_traversal(right_child(root))
+		return result
+    `
 	 </details>
 	 __________________________________________________________________
 
@@ -392,22 +394,102 @@ deletion operations.
 			The complexity for **Insertion, Deletion, Search** is **O(n)** because we have to go troughs all the cells to execute each function.
 			although this data structure is **easy to maintain and implement**, this is not efficient in terms of computation if we have a big amount of data to manage.
 			</details>
-		* Binary tree data structures find wide application in computing. Explain what is meant by the following terms, illustrating your answers using suitable diagrams.
-			* A full binary tree
-			<details>
-	 	 	<summary>Answer</summary>
 
-			![binary tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_tree.PNG?raw=true)
-			</details>
-			* A binary search tree
-			<summary>Answer</summary>
+    * Binary tree data structures find wide application in computing. Explain what is meant by the following terms, illustrating your answers using suitable diagrams.
+      * A full binary tree
+      <details>
+      <summary>Answer</summary>
 
-			![binary search tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_search_tree.PNG?raw=true)
-			</details>
+      ![binary tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_tree.PNG?raw=true)
+      </details>
 
-			* An AVL tree
-			<summary>Answer</summary>
+      * A binary search tree
+      <details>
+      <summary>Answer</summary>
 
-			![AVL tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/AVL_tree.PNG?raw=true)
-			</details>
-			Binary data structure allowed us to do a binary search O(log n)
+      ![binary search tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_search_tree.PNG?raw=true)
+      </details>
+
+      * An AVL tree
+      <details>
+      <summary>Answer</summary>
+
+      ![AVL tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/AVL_tree.PNG?raw=true)
+      Binary data structure allowed us to do a binary search O(log n)
+      </details>
+
+    * A hash table is an efficient implementation of a searchable collection that stores entries of the form (k,v), where k is a key and v a value.
+      * what is bucket array?
+        <details>
+        <summary>Answer</summary>
+
+        A hashtable have to find way to store the data that encounter a conflict, a bucket array is one of the different ways of implementing a hashtable and managing conflicts.
+
+        If an input have the same hash as an older input they are stored in the same column that correspond to the hash but will be stored in different row (i.e on top of one another).
+        </details>
+
+      * What is a hash function and what is it intended to do ? You should illustrate your answer by giving two different examples of hash functions that are used in practice.
+        <details>
+        <summary>Answer</summary>
+
+        any function that can be used to map data of arbitrary size in a fixed size is hash function. Generally it allow us to obtained an arbitrary number based on the given data. the given number is then used as an ID to find the stored data
+        </details>
+
+      * Explain what is meant by a collision in the context of a hashtable and describe how collisions are handles using linear probing.
+        <details>
+        <summary>Answer</summary>
+
+        hash function sometimes return the same value even with different data, that's when a conflict occur. Linear probing resolve this issue by storing data in the next available cell, It is arbitrary whether it goes on the left or the right. if it didn't find any available cell and hit the limit of the array then it loop on the other side of the array to continue the research. in order for this to work properly without looping an infinite amount of time, the array must never be full.  
+        </details>
+
+      * For a hashtable, what is the load factor and what does it tell us?
+        <details>
+        <summary>Answer</summary>
+
+        Based on the answer above we can tell that the weakness of linear probing is that the more the array is filled the less efficient it becomes. that is why we need an indicator to tell us the percentage of cell that are full. this percantage is the load factor, also represented as lambda. 50% (i.g 0.5) is generally considered to be a good indicator whereas 80% create a big lack of efficiency.
+        </details>
+
+    * Consider the following edge-weighted graph G, where edge-weights represent some kind of cost.
+      ![edge weight graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/edge_weight_graph.PNG?raw=true)
+
+      * List the vertices of G that have degree > 1.
+      <details>
+      <summary>Answer</summary>
+
+      N,M,O,R
+      because they have more than one edge
+      </details>
+
+      * Describe a simple cycle in G and give its overall cost.
+      <details>
+      <summary>Answer</summary>
+
+      P>N>M>O>R>Q>R>S
+
+      4+3+6+7+1+1+3 = 25
+      The cost of this cycle is 25
+      </details>
+
+      * show, using an appropriate diagram, how G may be represented using an adjacency matrix
+      <details>
+      <summary>Answer</summary>
+
+      |     | M   | N   | O   | P   | Q   | R   | S   |
+      |:--- |:--- | --- | --- | --- | --- | --- | --- |
+      | M   | 0   | 3   | 6   | 0   | 0   | 0   | 0   |
+      | N   | 3   | 0   | 2   | 5   | 0   | 0   | 0   |
+      | O   | 6   | 2   | 0   | 0   | 0   | 7   | 0   |
+      | P   | 0   | 5   | 0   | 0   | 0   | 0   | 0   |
+      | Q   | 0   | 0   | 0   | 0   | 0   | 1   | 0   |
+      | R   | 0   | 0   | 7   | 0   | 1   | 0   | 3   |
+      | S   | 0   | 0   | 0   | 0   | 0   | 3   | 0   |
+
+
+      </details>
+
+      * Assuming that G is represented using an adjacency matrix, what is the computational complexity of removing a vertex from G and why
+      <details>
+      <summary>Answer</summary>
+
+      the complexity would be O(1) because we just have to delete the row and the column of the vertex
+      </details>
