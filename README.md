@@ -1,6 +1,6 @@
 # Data-Structure-and-Algorithm
-/!\ Not finished yet, please report any mistakes or strange sentences formulation /!\
 
+![Binary search](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/banner.jpg?raw=true)
 
 This repository was made during the reading of the [lecture notes](http://www.cs.bham.ac.uk/~jxb/DSA/dsa.pdf) revised each year by **Jhon Bullinara** and originally written by **Martin Escardo** and revised by **Manfred Kerber**. All are members of the School of Computer Science, University of Birmingham, UK.
 
@@ -10,19 +10,30 @@ One of the greatest on-line resource on this subject is this youtube [playlist](
 
 ## Complexity
 
-When we talk about complexity in computer there is some things that you have to keep in mind:
+The purpose of complexity is to predict the execution time and the memory used by  algorithms. It allow us to compare them and take the one that suit our need.
 
-* We only care about input greater than
-* all constant/fixed values are dropped
+Efficiency of an algorithm is based on:
+  - Execution time.
+  - space/memory used.
+
+### Notations
+![Complexity graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity_notations.PNG?raw=true)
+
+When we talk about complexity in computer science there is some things that you have to keep in mind:
+* All constant/fixed values are dropped.
 (i.g 7 and 5 are constant in 4x-7 = 5)
-* ignore the base of logs
+* We ignore the bases of the logs.
+
+Generally the goal is to use more memory to gain time in execution. But it sometimes vary depending on the situation.
+
+### Complexity graph
 ![Complexity graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity.jpeg?raw=true)
 ____________________________________________________________________________
 ## Lists, Stacks, Queues
 
-| Stacks             | Queues            |
-|:------------------ |:----------------- |
-| First In First Out | First In Last Out |
+| Stacks                             | Queues                            |
+|:---------------------------------- |:--------------------------------- |
+| **F**irst **I**n **F**irst **O**ut | **F**irst **I**n **L**ast **O**ut |
 
 ### Abstract Data Type
 
@@ -104,7 +115,7 @@ Graph are often useful to represent informations in a more general graphical for
 | weakly connected graph    | Each pair of vertices are connected in both ways                                                                       |
 | Weakly connected graph    | At least one pair of vertices aren't connected or connected only in one way                                            |
 
-### Array implementation
+### Array implementation / Adjacency matrix
 
 ![undirected graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/undirectedgraph.png?raw=true)
 ![matrix adjacency](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/adjacencymatrix.png?raw=true)
@@ -113,6 +124,8 @@ This is really explicit, however we can easily notice the problematic of this im
 
 Also a graph with only a few edge would mainly filled the array with zeros...
 
+pros:
+- insertion and deletion are quick and easy
 cons :
 - Take a lot of space.
 - Take space even when there is no edges.
@@ -487,9 +500,9 @@ deletion operations.
 
       </details>
 
-      * Assuming that G is represented using an adjacency matrix, what is the computational complexity of removing a vertex from G and why
+      * Assuming that G is represented using an adjacency matrix, what is the computational complexity of removing a vertex from G and why?
       <details>
       <summary>Answer</summary>
 
-      the complexity would be O(1) because we just have to delete the row and the column of the vertex
+      the complexity would be O(n^2) because
       </details>
