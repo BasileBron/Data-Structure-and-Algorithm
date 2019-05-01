@@ -42,7 +42,8 @@ ____________________________________________________________________________
 |Constructor   | EmptyList() MakeList() | EmptyList() MakeList() Left(element,list) MakeListRight(element,list) | EmptyStack push(element, stack)| EmptyQueues push(element, queues)
 condition | isEmpty(list) | isEmpty(list) | isEmpty(stack)|isEmpty(queues
  selector| first(list) rest(list) | firstLeft(list) restLeft(list) firstRight(list) restRight(list) |top(stack) pop(stack) | top(queues) pop(queues)
-mutator | replaceFirst(x,l) replaceRest(r,l)
+mutator | replaceFirst(x,l) replaceRest(r,l)||||
+
 *data structure without mutator create à new structure when changes are needed.*
 
 ### Searching
@@ -97,7 +98,35 @@ _If we want to store a shopping list of less than a 11 word then we just have to
 
 The load facto is defined by the percentage of filled slot in your table. A good load factor is generally around 50% the more it increase the more time it will take to manipulate the table.
 
+### Chaining
+
+Chaining is often compared with bucket. chaining is like having multiple buckets that represent  
+
+We can allowed lambda to be larger than 1 however we still want to keep it low to avoid loss of efficiency
+
+### Rehashing
+
+First of all, why do we need Rehashing? imagine that your load factor has become one and that you have to resize your array.
+
+If your hash function is value % table size your are not going to end up on the right place we you search you items !
+
+that is why you need to reinsert everything with the new hash function.
+
 ### Conflict management
+
+#### Linear probing
+
+Linear probing is a form of open addressing technique.It allow us to manage colision in hashtable.
+When a collision occur we look on the index n+1 and go cell by cell until a empty one is found to store our key
+
+(in order for this to work you need to allways have an empty slot to avoid infite loop).
+#### Quadratic probing
+
+Quadratic probing use the same process but search each n+4 cell.
+#### Double hashing
+Double hashing is also the same process but instead of jumping each 1 or 4 cell we jump each **n** cell. To calculate **n** we use a second hash function.
+
+The second hash function is only used if a collision occur.
 __________________________________________________________________________________
 ## Graph
 
