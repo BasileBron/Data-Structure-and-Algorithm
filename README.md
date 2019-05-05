@@ -1,6 +1,6 @@
 # Data-Structure-and-Algorithm
 
-![Binary search](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/banner.png?raw=true)
+![Binary search](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/banner.jpg?raw=true)
 
 This repository was made during the reading of the [lecture notes](http://www.cs.bham.ac.uk/~jxb/DSA/dsa.pdf) revised each year by **Jhon Bullinara** and originally written by **Martin Escardo** and revised by **Manfred Kerber**. All are members of the School of Computer Science, University of Birmingham, UK.
 
