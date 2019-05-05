@@ -1,6 +1,6 @@
 # Data-Structure-and-Algorithm
 
-![Binary search](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/banner.jpg?raw=true)
+![Binary search](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/banner.png?raw=true)
 
 This repository was made during the reading of the [lecture notes](http://www.cs.bham.ac.uk/~jxb/DSA/dsa.pdf) revised each year by **Jhon Bullinara** and originally written by **Martin Escardo** and revised by **Manfred Kerber**. All are members of the School of Computer Science, University of Birmingham, UK.
 
@@ -79,8 +79,20 @@ An AVL tree is a binary tree search where the subtraction of (the left longest p
 | ------------------------------------------------------------------------------------- | ----------------------- |
 | Bubble sort, Selection Sort, Insertion sort, Treesort, Heapsort, Quicksort, Mergesort | Bin, Bucket, Radix Sort |
 __________________________________________________________________________________
-## Hash table
+## Red Black Trees
 
+The **6 rules** of the red black Tree
+
+1) Every node is **red or black**.
+2) Root node is always **black**.
+3) New insertion are always **red**.
+4) Every path from root - leaf has the same number of **black** nodes.
+5) No path can have two **consecutive RED** nodes.
+6) Nulls are black
+
+red black tree class:
+
+## Hash table
 ### Introduction to the concept
 **Hash table are really efficient** but they **uses a lot of memory**. It is due to the fact that they basically store the data based on their values.
 
@@ -112,14 +124,28 @@ If your hash function is value % table size your are not going to end up on the 
 
 that is why you need to reinsert everything with the new hash function.
 
+### Open addressing
+The open addressing method has all the hash keys stored in a fixed length table. We use a hash function to determine the base address of a key and then use a specific rule to handle a collision. Each location in the table is either empty, occupied or deleted. **Empty** is the default state of all spaces in the table before any data is ever stored. **Occupied** means that there is currently a key-value pair stored in the location. **Deleted** means there was once a value stored in the space, but it has been marked deleted. Although deleted positions are treated the same as empty positions for the insert operations, those deleted positions are treated as occupied when doing data retrieval.
+
+Below are the basic process of inserting a new key (k) using open addressing:
+
+1. Compute the position in the table where k should be stored.
+
+2. If the position is empty or deleted, store k in that position.
+
+3. If the position is occupied, compute an alternative position based on some defined hash function.
+
+The alternative position can be calculated using: linear probing, quadratic probing or double hashing. Next, we will demonstrate these three techniques and discuss important differences.
+
+[source of this paragraph.](https://study.com/academy/lesson/open-addressing-uses-methods-pros-cons.html)
 ### Conflict management
 
 #### Linear probing
 
-Linear probing is a form of open addressing technique.It allow us to manage colision in hashtable.
+Linear probing is a form of open addressing technique.It allow us to manage collision in hashtable.
 When a collision occur we look on the index n+1 and go cell by cell until a empty one is found to store our key
 
-(in order for this to work you need to allways have an empty slot to avoid infite loop).
+(in order for this to work you need to allays have an empty slot to avoid infinite loop).
 #### Quadratic probing
 
 Quadratic probing use the same process but search each n+4 cell.
