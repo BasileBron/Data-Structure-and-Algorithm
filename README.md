@@ -1,6 +1,6 @@
 # Data-Structure-and-Algorithm
 
-![Binary search](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/banner.jpg?raw=true)
+![Binary search](img/banner.jpg)
 
 This repository was made during the reading of the [lecture notes](http://www.cs.bham.ac.uk/~jxb/DSA/dsa.pdf) revised each year by **Jhon Bullinara** and originally written by **Martin Escardo** and revised by **Manfred Kerber**. All are members of the School of Computer Science, University of Birmingham, UK.
 
@@ -10,24 +10,28 @@ One of the greatest on-line resource on this subject is this youtube [playlist](
 
 ## Complexity
 
-The purpose of complexity is to predict the execution time and the memory used by  algorithms. It allow us to compare them and take the one that suit our need.
+The purpose of complexity is to **predict** the **execution time** and the **memory used** by  algorithms. It allow us to compare them and take the one that suit our need.
 
 Efficiency of an algorithm is based on:
   - Execution time.
   - space/memory used.
 
 ### Notations
-![Complexity graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity_notations.PNG?raw=true)
+![Complexity graph](img/complexity_notations.PNG)
 
 When we talk about complexity in computer science there is some things that you have to keep in mind:
 * All constant/fixed values are dropped.
 (i.g 7 and 5 are constant in 4x-7 = 5)
+
 * We ignore the bases of the logs.
+
+Ok but why?
+*
 
 Generally the goal is to use more memory to gain time in execution. But it sometimes vary depending on the situation.
 
 ### Complexity graph
-![Complexity graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity.jpeg?raw=true)
+![Complexity graph](img/complexity.jpeg)
 ____________________________________________________________________________
 ## Lists, Stacks, Queues
 
@@ -50,7 +54,7 @@ mutator | replaceFirst(x,l) replaceRest(r,l)||||
 
 |Linear Search | Binary Search|
 |--------------|--------------|
-|![Linear serach](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/Linear-Search.png?raw=true)| ![Binary search](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary-search.jpg?raw=true)|
+|![Linear serach](img/Linear-Search.png)| ![Binary search](img/binary-search.jpg)|
 |O(n)   | O(log n)
 
 __________________________________________________________________________________
@@ -58,16 +62,16 @@ ________________________________________________________________________________
 
 |Tree part|   Height|Node  |Leaf|
 |---------|---------|------|----|
-|Equation |**Heaight of a tree** can be approximately calculated using the number of node **s**. ```h ≈ log_2 * s```|**maximum number of node** can be calculated with the height of the tree: ```s(h) = 2^(h+1) -1``` **number of node at a level h** of a tree is : ```2^h```|**Maximum number of leaf** based on the number of nodes. ```n/2```|
+|Equation |**Height of a tree** can be approximately calculated using the number of node **s**. ```h ≈ log_2 * s```|**maximum number of node** can be calculated with the height of the tree: ```s(h) = 2^(h+1) -1``` **number of node at a level h** of a tree is : ```2^h```|**Maximum number of leaf** based on the number of nodes. ```n/2```|
 |Math example| Height of a tree with **8 nodes** will be: ```log_2*8```|the first part of the equation ```2^(h+1)``` calculate how much node would be on the next level of the tree since h is the last level of a tree. So the conclusion is that the next level is equal to the sum of all the node +1.|max number of leaf of a tree with 6 nodes will be: ```6/2 = 3``` The number of internal node of a tree of height 2 will be: ```2² = 4```
 
 ### Different kind of tree
 
-![Different kind of tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/tree-kind.png?raw=true)
+![Different kind of tree](img/tree-kind.png)
 
 ### Balancing
 
-![Balancing](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/balanced1.JPG?raw=true)
+![Balancing](img/balanced1.JPG)
 
 ### AVL tree
 
@@ -75,10 +79,12 @@ An AVL tree is a binary tree search where the subtraction of (the left longest p
 
 ## Priority Queues and Heap Trees
 ### Sorting
+
+
 | comparison based                                                                      | Non-comparison based    |
 | ------------------------------------------------------------------------------------- | ----------------------- |
-| Bubble sort, Selection Sort, Insertion sort, Treesort, Heapsort, Quicksort, Mergesort | Bin, Bucket, Radix Sort |
-__________________________________________________________________________________
+| Bubble sort, Selection Sort, Insertion sort, Treesort, Heapsort, Quicksort, Mergesort | Bin, Bucket, Radix Sort
+
 ## Red Black Trees
 
 The **6 rules** of the red black Tree
@@ -142,7 +148,7 @@ The alternative position can be calculated using: linear probing, quadratic prob
 
 #### Linear probing
 
-Linear probing is a form of open addressing technique.It allow us to manage collision in hashtable.
+Linear probing is a form of open addressing technique .It allow us to manage collision in hashtable.
 When a collision occur we look on the index n+1 and go cell by cell until a empty one is found to store our key
 
 (in order for this to work you need to allays have an empty slot to avoid infinite loop).
@@ -172,8 +178,8 @@ Graph are often useful to represent informations in a more general graphical for
 
 ### Array implementation / Adjacency matrix
 
-![undirected graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/undirectedgraph.png?raw=true)
-![matrix adjacency](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/adjacencymatrix.png?raw=true)
+![undirected graph](img/undirectedgraph.png)
+![matrix adjacency](img/adjacencymatrix.png)
 
 This is really explicit, however we can easily notice the problematic of this implementation, which is the amount of cell required. we would need an array with 10000 cell for a graph with only 100 vertices.
 
@@ -190,14 +196,14 @@ cons :
 
 To solved the problematic above we can use a one-dimensional array that points to a linked list of neighbours for each vertex name, connection weight and pointer to the next triple.
 
-![Graph Mixed implementation](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/mixed.png?raw=true)
+![Graph Mixed implementation](img/mixed.png)
 
 cons :
 - Symmetrical (Two time the same data).
 
 ### Pointer-based implementation
 
-![ Graph pointer-based implementation](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/pointerBased.png?raw=true)
+![ Graph pointer-based implementation](img/pointerBased.png)
 
 ### Dijkstra's Algorithm
 
@@ -227,9 +233,9 @@ cons :
 * Stack--------------------------------------------------------------------------------
 	* Pros:
 		1. Helps manage the data in particular way (LIFO) which is not possible with Linked list and array.
-		2. When function is called the local varriables are stored in stack and destroyed once returned. Stack is used when varriable is not used outside the function.
+		2. When function is called the local variables are stored in stack and destroyed once returned. Stack is used when variable is not used outside the function.
 		So, it gives control over how memory is allocated and deallocated
-		3. Stack frees you from the burden of remembering to cleanup(read delete) the object
+		3. Stack frees you from the burden of remembering to clean-up(read delete) the object
 		4. Not easily corrupted (No one can easily inset data in middle)
 
 	* Cons:
@@ -273,7 +279,7 @@ cons :
 
 [source](http://www.mylearning.in/2015/06/pros-and-cons-of-different-data.html)
 
-![complexity of data structures](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/complexity_of_data_structures.png?raw=true)
+![complexity of data structures](img/complexity_of_data_structures.png)
 # Test Question
 
 * A is queue is a linear data
@@ -330,7 +336,7 @@ deletion operations.
 
 	<details>
 	<summary>Answer</summary>
-  ![complexity of data structures](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/scheme.png?raw=true)
+  ![complexity of data structures](img/scheme.png)
   Would be:
   | 1   | 2   | 3   | 4   | 5   | 6   | 7   |
   |:--- |:--- | --- | --- | --- | --- | --- |
@@ -391,7 +397,7 @@ deletion operations.
 	 <details>
 	 <summary>Answer</summary>
 
-	 ![binary tree expression](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_tree_expression.png?raw=true)
+	 ![binary tree expression](img/binary_tree_expression.png)
 	 </details>
 	 __________________________________________________________________
 
@@ -443,13 +449,13 @@ deletion operations.
 
 			old answer :
 			I would store the values in each cell in this format: "name, number"
-				to search for an employee number based on his name we just have to go go throughout the list and compare the **n** first letters of each cell (**n** being the lenght of the name) with the given name. if a match occur return the full cell that matched.
+				to search for an employee number based on his name we just have to go throughout the list and compare the **n** first letters of each cell (**n** being the length of the name) with the given name. if a match occur return the full cell that matched.
 
 			To insert a new employee in the doubly link list based on the given values (name, number and list), first this function check if the given list is not empty (otherwise we just return a new list with the given value). If not then use the alphabetical order to compare the cells with the given name to find the right spot to insert the new value.
 
-			It is important to add that technically we don't insert the new item but create a new list which have the new item at the right place, because double linked list don't have mutator
+			It is important to add that technically we don't insert the new item but create a new list which have the new item at the right place, because double linked list don't have mutator.
 
-			Deleting a cell based on a given name is possible by comparing the cells with the name in the same way as the search function but instead of returning the cell we return the new list constructed during each comparison and that ignore the cell that we wanned to delete.
+			Deleting a cell based on a given name is possible by comparing the cells with the name in the same way as the search function but instead of returning the cell we return the new list constructed during each comparison and that ignore the cell that we wanted to delete.
 
 	 	 	</details>
 		 	__________________________________________________________________
@@ -468,21 +474,21 @@ deletion operations.
       <details>
       <summary>Answer</summary>
 
-      ![binary tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_tree.PNG?raw=true)
+      ![binary tree](img/binary_tree.PNG)
       </details>
 
       * A binary search tree
       <details>
       <summary>Answer</summary>
 
-      ![binary search tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/binary_search_tree.PNG?raw=true)
+      ![binary search tree](img/binary_search_tree.PNG)
       </details>
 
       * An AVL tree
       <details>
       <summary>Answer</summary>
 
-      ![AVL tree](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/AVL_tree.PNG?raw=true)
+      ![AVL tree](img/AVL_tree.PNG)
       Binary data structure allowed us to do a binary search O(log n)
       </details>
 
@@ -514,11 +520,11 @@ deletion operations.
         <details>
         <summary>Answer</summary>
 
-        Based on the answer above we can tell that the weakness of linear probing is that the more the array is filled the less efficient it becomes. that is why we need an indicator to tell us the percentage of cell that are full. this percantage is the load factor, also represented as lambda. 50% (i.g 0.5) is generally considered to be a good indicator whereas 80% create a big lack of efficiency.
+        Based on the answer above we can tell that the weakness of linear probing is that the more the array is filled the less efficient it becomes. that is why we need an indicator to tell us the percentage of cell that are full. this percentage is the load factor, also represented as lambda. 50% (i.g 0.5) is generally considered to be a good indicator whereas 80% create a big lack of efficiency.
         </details>
 
     * Consider the following edge-weighted graph G, where edge-weights represent some kind of cost.
-      ![edge weight graph](https://github.com/BasileBron/Data-Structure-and-Algorithm/blob/master/img/edge_weight_graph.PNG?raw=true)
+      ![edge weight graph](img/edge_weight_graph.PNG)
 
       * List the vertices of G that have degree > 1.
       <details>
