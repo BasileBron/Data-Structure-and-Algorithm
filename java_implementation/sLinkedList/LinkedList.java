@@ -68,65 +68,18 @@ public class LinkedList
   }
   public void remove(int j){
       ListNode node = this.head;
-      ListNode nextNode;
-      ListNode previousNode;
       if (j == 0) {
-            nextNode = node.getNext();
-            node.setNext(null);
-            this.head = nextNode;
-            this.size--;
-      } else {
-          previousNode = node;
-          node = node.getNext();
+      this.head = node.getNext();
+      } else{
+          ListNode previousNode;
+          previousNode = this.head;
           for(int i = 1; i<size; i++){
               if (i == j) {
                 previousNode.setNext(node.getNext());
-                node.setNext(null);
-                this.size--;
               } 
               previousNode = node;
-              nextNode = node.getNext();
           }
       }
-  }
-  public void add(int j, Object item) {
-      ListNode node = this.head;
-      ListNode nextNode;
-      ListNode previousNode;
-      ListNode newNode = new ListNode(item, null);
-      if (j == 0) {
-          newNode.setNext(this.head);
-          this.head = newNode; 
-          this.size++;
-      } else {
-          previousNode = node;
-          node = node.getNext();
-          for(int i = 1; i<size; i++){
-              if (i == j) {
-                newNode.setNext(previousNode.getNext());
-                previousNode.setNext(newNode);
-              } 
-              previousNode = node;
-              nextNode = node.getNext();
-              this.size++;
-          } 
-      }
-  }
-  public LinkedList reverse() {
-      LinkedList reversedList = new LinkedList();
-      ListNode node;
-      ListNode previousReversedListNode;
-      node = this.head;
-      ListNode reversedListNode = this.head;
-      node = node.getNext();
-      for (int i = 1; i<size; i++){
-          previousReversedListNode = reversedListNode;
-          reversedListNode = node;
-          reversedListNode.setNext(reversedListNode);
-          node = node.getNext();
-          reversedList.size++;
-      }
-      reversedList.head = reversedListNode;
-      return reversedList;
+      
   }
 }
